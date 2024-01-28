@@ -10,11 +10,15 @@ class TextandSlider extends StatefulWidget {
       required this.audioPlayer,
       required this.duration,
       required this.position,
-      required this.musicModelist});
+      required this.musicModelist,
+      required this.screenHeight,
+      required this.screenWidth});
   AudioPlayer audioPlayer;
   var duration;
   var position;
   List musicModelist;
+  double screenHeight;
+  double screenWidth;
   @override
   State<TextandSlider> createState() => _TextandSlider();
 }
@@ -26,8 +30,8 @@ class _TextandSlider extends State<TextandSlider> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 7,
+        SizedBox(
+          height: widget.screenHeight / 60,
         ),
         Padding(
           padding: const EdgeInsets.only(left: 40, right: 40),
@@ -49,8 +53,8 @@ class _TextandSlider extends State<TextandSlider> {
                 fontFamily: 'SLASHI', fontSize: 20, color: Colors.white),
           ),
         ),
-        const SizedBox(
-          height: 3,
+        SizedBox(
+          height: widget.screenHeight / 130,
         ),
         Padding(
           padding: const EdgeInsets.only(left: 13, right: 13),
@@ -94,8 +98,8 @@ class _TextandSlider extends State<TextandSlider> {
             ],
           ),
         ),
-        const SizedBox(
-          height: 2,
+        SizedBox(
+          height: widget.screenHeight / 140,
         ),
       ],
     );

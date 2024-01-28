@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:slashi_music/Screens/allsongs/allsongs.dart';
 import 'package:slashi_music/Screens/favourite/favourite.dart';
 import 'package:slashi_music/Screens/player/player.dart';
-import 'package:slashi_music/Screens/player/playerfunctions.dart';
 import 'package:slashi_music/Screens/player/widgets/player_controller.dart';
 import 'package:slashi_music/Screens/player/slider/text&slider.dart';
 import 'package:slashi_music/Screens/player/widgets/favbutton.dart';
@@ -46,8 +44,8 @@ class _PlayerTileState extends State<PlayerTile> {
             color: Colors.black,
             child: Column(
               children: [
-                const SizedBox(
-                  height: 70,
+                SizedBox(
+                  height: widget.screenHeight / 12,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -87,25 +85,8 @@ class _PlayerTileState extends State<PlayerTile> {
                     )
                   ],
                 ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.start,
-                //   children: [
-                //     Padding(
-                //       padding: const EdgeInsets.only(left: 15),
-                //       child: IconButton(
-                //           onPressed: () {
-                //             Navigator.of(context).pop();
-                //           },
-                //           icon: const Icon(
-                //             Icons.arrow_back_ios_rounded,
-                //             color: Colors.white,
-                //             size: 30,
-                //           )),
-                //     ),
-                //   ],
-                // ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 30,
+                  height: widget.screenHeight / 30,
                 ),
                 Stack(
                   children: [
@@ -115,6 +96,8 @@ class _PlayerTileState extends State<PlayerTile> {
                   ],
                 ),
                 TextandSlider(
+                  screenHeight: widget.screenHeight,
+                  screenWidth: widget.screenWidth,
                   audioPlayer: widget.audioplayer,
                   duration: durations,
                   position: positions,

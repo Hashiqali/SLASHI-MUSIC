@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:just_audio_background/just_audio_background.dart';
 import 'package:provider/provider.dart';
 import 'package:slashi_music/Screens/splash&welcome/splash.dart';
 import 'package:slashi_music/db/db_model/favourite_model/db_favourite_model.dart';
